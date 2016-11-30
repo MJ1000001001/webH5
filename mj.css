@@ -1,0 +1,248 @@
+
+body{
+    margin: 0px;
+    padding:0px;
+    border: 0px;
+    font-family: "微软雅黑";/*字体格式*/
+    font-size: 14px;/*字体大小*/
+    font-smoothing:antialiased;/*字体抗锯齿*/
+    -webkit-font-smoothing:antialiased;/*增加-webkit内核兼容字体抗锯齿*/
+    background-color: #f9f7f8;/*背景颜色*/
+    min-width: 1150px;/*盒子中间位置宽度*/
+}/*进行属性的重置,防止浏览器中间的差异*/
+h2,span,p,form,input,dl,dd,dt{
+    margin: 0px;
+    padding: 0px;
+}/*进行属性的重置,防止浏览器中间的差异*/
+
+ul,li{
+    list-style: none;/*取消列表的列表项目标记*/
+    margin: 0px;
+    padding:0px;
+}/*进行属性的重置,防止浏览器中间的差异*/
+
+table,tr,td{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	border-spacing: 0px;
+	display:table;
+	border-collapse: separate;
+}
+a{
+    text-decoration: none;/*a元素的文本修饰为none*/
+    cursor: pointer;/*将鼠标移到a元素是鼠标变为手型*/
+}
+
+.clear{
+    clear: both;/*消除浮动*/
+}
+.head-top .head-top-width .head-top-l span{
+    margin-left: 13px;
+}
+.head-top .head-top-width .head-top-r span{
+    padding-right: 13px;
+    margin-right: 13px;
+    height: 30px;/* 高度为30px*/
+    line-height: 30px;/*字体高度为30px*/
+    color: #e3dfd5;
+}
+.head-top .head-top-width span a{
+    color:#c0bcb3;/*定义头部顶部的a元素的颜色为灰色。*/
+    height: 30px;
+    line-height: 30px;
+}
+.head-top .head-top-width span a:hover{/*在.head-top-width类下所有的a元素都使用hover实现字体变色*/
+    color: #ff0000;
+}
+.head-top{
+    height: 30px;/*高度*/
+    background: #323232;/*背景颜色*/
+    line-height: 30px;/*一行文字高度*/
+}
+.head-top .head-top-width{
+    width: 1150px;/*设置宽度固定为1150px。*/
+    margin: 0px auto;/*设置margin属性上下距离为0px，左右距离为auto*/
+    background:url(./head_top.png) no-repeat 348px -0.5px;/*背景图片路径，不重复,x偏移和Y偏移*/
+}
+.head-top .head-top-width .head-top-l{
+    width: 400px;
+    height: 30px;/*高度*/
+    line-height: 30px;/*一行文字高度*/
+    text-align: left;/*文本左对齐*/
+    float: left;/*float布局类型，会使盒子脱离文档流，所以需要在HTML中的最后写清除浮动*/
+}
+.head-top .head-top-width .head-top-r{
+    width: 400px;
+    height: 30px;/*高度*/
+    line-height: 30px;/*一行文字高度*/
+    text-align: right;/*文本右对齐*/
+    float: right;/*float布局类型*/
+}
+
+.head{
+    height: 124px;/*盒子高度为124px*/
+    background: url(./head-bg.gif) repeat-x 0px 0px;/*设置背景从0px,0px处开始，按照x方向重复*/
+}
+.head .xidianlogo{
+    width:1150px;
+    height:90px;/*因为使用position布局，所以需要在父元素中设置高度属性，否则父元素的高度会为0*/
+    margin: 0px auto;/*将box的margin上下设为0px，左右两边设为自动。*/
+    position:relative;/*使用position布局*/
+    background:url(./head.png) no-repeat 798px 20px;
+}
+.head .xidianlogo .logo{
+    position:absolute;/*使用position的绝对布局，会脱离文档流（float布局也会脱离文档流）*/
+    left:11px;/*该box的左上角坐标的left坐标为11px*/
+    top:12px;/*该box的左上角坐标的top坐标为12px*/
+}
+.head .xidianlogo .xglj{
+    width:500px;
+    margin: 0px;
+    height:20px;
+    line-height:20px;
+    font-size: 14px;
+    text-align: right;/*文本右对齐*/
+    position:absolute;
+    left:650px;
+    top:34px;
+}
+.head .menu{
+    width: 1150px;
+    margin: 0 auto;
+    height: 34px;
+}
+.head .menu .first{
+    height: 34px;
+    display: flex;/*使用flex布局*/
+    flex-direction:row; /*使子元素按照主轴方向排列*/
+    justify-content: space-between;/*主轴方向，两端对齐，项目之间的间隔都相等*/
+}
+.head .menu .first li{
+    font-size:16px;
+    width: 104px;
+    height: 34px;
+    display:block;
+    line-height: 34px;
+    text-align: center;
+    cursor:pointer;
+    z-index: 999;/*设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面*/
+    font-weight: normal;/*设置字体的粗细*/
+}
+.head .menu .first li a{
+    color: #fff;
+}
+.head .menu .first li a:hover{
+    background-color:#f90000;/*只改变背景颜色*/
+    display: block;/*block元素默认情况下会宽度会自动填满父元素宽度*/
+}/*实现在鼠标滑过li元素时，其背景变色切元素内文字也变色*/
+
+.head .menu .first .second{
+    z-index:909; 
+    width:1110px;
+    padding: 20px;
+    top:34px;
+    background:url(./nav-erji-bg.png) repeat; /*二级菜单背景图，填满整个盒子*/
+    margin:0 auto;
+    opacity: 50%;/*设置透明度为50%*/
+}
+.head .menu .first .second .secondl{
+    margin: 10px 0 0 40px;
+    width:440px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    float: left;
+}
+
+.head .menu .first .second .secondr{
+    width:510px;
+    height: 160px;
+    margin: 25px 10px 0 0;
+    float:right;
+    display:inline;
+
+}
+
+.head .menu .first .second a{
+    color:#5e605f;
+}
+.head .menu .first .second a:hover{
+    color:#ff0000;
+    background-color:white;
+}
+
+.head .menu .first .second .secondl li{ 
+    height:48px; 
+    width: 115px;
+    line-height:48px; 
+    margin:0 5px; 
+    border-bottom:1px solid #c8cccd;/*下边框样式，宽度，样式，颜色*/
+    font-size:14px; 
+    background:url(./xxgkl-li.png) no-repeat 5px center; 
+    padding-left:20px; 
+    text-align:left;
+}
+#second8  li{
+    width: 170px;
+}
+#second1{left:-0px;}
+#second2{position:relative;top:0px;left:-104.5px;}
+#second3{position:relative;top:0px;left:-209px;}
+#second4{position:relative;top:0px;left:-313.5px;}
+#second5{position:relative;top:0px;left:-418px;}
+#second6{position:relative;top:0px;left:-522.5px;}
+#second7{position:relative;top:0px;left:-627.5px;}
+#second8{position:relative;top:0px;left:-732px;}
+#second10{position:relative;top:0px;left:-941px;} 
+
+.banner .banner-in{
+	width: 1150px;
+	height: 390px;
+	margin: 0 auto;
+}
+#u_u36_div{
+	padding: 0px;
+	margin: 0px;
+	border: 0px solid black;
+	background-color:#000000;
+	height: 390px;
+	width: 1150px;
+}
+#u_u36_img{
+	padding: 0px;
+	border: 0px;
+}
+#u_u36_pic{
+	border:0;
+	width: 1150px;
+	height: 390px;
+}
+
+.banner .banner-in tbody{
+	display: table-row-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+.banner .banner-in .filter{
+	width: 1150px;
+	height: 19px;
+	text-align: right;
+	top: -19;/*向上*/
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+.banner .banner-in .filter a{
+	text-decoration: none;
+	color: #fff;
+	line-height: 15px;
+	font-size: 15px;
+	font-family: 宋体;
+	background-color: #666;
+	padding: 1px 7px;
+	border-left:#cccccc 1px solid;
+}
